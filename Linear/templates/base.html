@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Model</title>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            margin: 50px;
+        }
+    </style>
+
+
+</head>
+<body>
+    
+    <h1>House Price Prediction by Linear Regression Model</h1><br>
+    <form  method="post">
+        {% csrf_token %}
+        <br>
+        <br>
+        <br>
+        <h3>Area in Square Feets</h3>
+        {{ house_area.as_p }}
+        <input type="submit" value="predict">
+    </form>
+    {% if Area %}
+    <h2>House Price Predict  <p>  Rs {{ Area }}</p></h2> 
+    {% endif %}
+</body>
+</html>
